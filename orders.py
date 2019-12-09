@@ -18,12 +18,24 @@ def open_print_close(file_name):
             lines = file.readlines()
             for line in lines:
                 print(line.strip('\n'))
-
     except FileNotFoundError as error:
         print('Check your file')
         print(error)
-
     finally:
         print('Program ending')
 
+def open_write_txt(file, item):
+    try:
+        with open(file, 'a') as file_to_write:
+            file_to_write.write(item + '\n')
+    except FileNotFoundError as error:
+        print('Check your file/path')
+        print(error)
+    finally:
+        print('Program ending')
+
+open_write_txt('order2.txt', 'cupcake')
+open_write_txt('order2.txt', 'OJ with carrot')
+open_write_txt('order2.txt', 'Beans on toast')
+open_write_txt('order2.txt', 'Eggs Benedict')
 open_print_close('order2.txt')

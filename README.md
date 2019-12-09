@@ -18,7 +18,7 @@ Which is a good thing.
 
 ## Definitions
 
-## try: except:
+## try: except: finally:
 These blocks of code are used in conjunction to error handle
 ```buildoutcfg
 try:
@@ -26,7 +26,19 @@ try:
 except <exception> as place_holder :
     block of code
     print('place_holder')
+finally:
+    block of code
 ```
+### Using open() and with()
+When using open you need to cloe the files you actually open.
+
+you can skip this step by using 'with'
+```buildoutcfg
+with open(<file>, <option>) as <place_holder>:
+    <place_holder>.readlines()
+
+```
+
 
 ### Exceptions 
 These occur when an error occurs 
